@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template ,request 
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('OBS.html')
+    return render_template('obb.htm')
 
 @app.route('/login')
 def login():
@@ -18,21 +18,17 @@ def register():
 def dashboard():
     return render_template('duyurlar.html')
 
-@app.route('/gunluk/ekle')
-def gunluk_ekle():
-    return render_template('gunluk_ekle.html')
+@app.route('/Akademik')
+def Akademik():
+    return render_template('Akademik.html')
 
-@app.route('/Akademik/Yönetim')
-def Akademik_Yönetim():
-    return render_template('Akademik_Yönetim.html')
+@app.route('/Uyumluluk')
+def Uyumluluk():
+    return render_template('Uyumluluk.html')
 
-@app.route('/Güvenlik/ve/Uyumluluk')
-def Güvenlik_ve_Uyumluluk():
-    return render_template('Güvenlik_ve_Uyumluluk.html')
-
-@app.route('/Kayıt/ve/Kayıt/Yenileme')
-def Kayıt_ve_Kayıt_Yenileme():
-    return render_template('Kayıt_ve_Kayıt_Yenileme.html')
+@app.route('/Yenileme')
+def Yenileme():
+    return render_template('Yenileme.html')
 
 if __name__ == '__main__':
     app.run(debug=True) 
